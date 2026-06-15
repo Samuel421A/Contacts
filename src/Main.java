@@ -3,6 +3,8 @@ import java.io.IOException;
 public class Main {
     public static void main (String[] args) throws IOException {
         Registration registration = new Registration();
-        registration.toRegisterAndShow();
+        registration.toRegister();
+        registration.showContacts();
+        registration.saveContactsToJson();
     }
 }

@@ -11,7 +11,7 @@ public class Registration {
     private final ArrayList<Contact> contacts = new ArrayList<>();
     private int counter = 0;
 
-    public void toRegisterAndShow() throws IOException {
+    public void toRegister() {
         System.out.println("QUANTOS CONTATOS VOCÊ QUER CADASTRAR?");
         int quantity = reader.nextInt();
         reader.nextLine();
@@ -33,13 +33,17 @@ public class Registration {
 
             contacts.add(contact);
         }
+    }
 
+    public void showContacts() {
         counter = 0;
         for (Contact contact : contacts) {
             counter++;
             System.out.println(counter + "º CONTATO: " + contact);
         }
+    }
 
+    public void saveContactsToJson() throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         FileWriter writer = new FileWriter("contacts.json");
         String json = gson.toJson(contacts);
