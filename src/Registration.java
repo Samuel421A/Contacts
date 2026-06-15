@@ -33,8 +33,11 @@ public class Registration {
 
             contacts.add(contact);
         }
+
+        counter = 0;
         for (Contact contact : contacts) {
-            System.out.println(contact);
+            counter++;
+            System.out.println(counter + "º CONTATO: " + contact);
         }
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
